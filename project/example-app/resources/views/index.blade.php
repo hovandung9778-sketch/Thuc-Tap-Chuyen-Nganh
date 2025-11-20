@@ -1,5 +1,7 @@
+{{--dùng <x:app>...</x:app> khi app nằm trong view/component/app chứ không phải view/layouts/app --}}
+
 @extends('layouts/app')
-@section('body')
+@section('content')
   
 
     <section id="home-section" class="hero">
@@ -528,3 +530,4 @@
     </section>
 	
     @endsection
+	

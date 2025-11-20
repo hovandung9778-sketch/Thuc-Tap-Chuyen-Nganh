@@ -1,9 +1,11 @@
 <?php
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\admin\CategoryController;
+
 
 Route::get('/', function () {
     return view('index');
-})->name('index');
+})->name('home');
 Route::get('/shop', function () {
     return view('shop');
 })->name('shop');
@@ -13,6 +15,9 @@ Route::get('/about', function () {
 Route::get('/blog', function () {
     return view('blog');
 })->name('blog');
+Route::get('/blog-single', function () {
+    return view('blog-single');
+})->name('blog-single');
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
@@ -25,8 +30,17 @@ Route::get('/wishlist', function () {
 Route::get('/product-single', function () {
     return view('product-single');
 })->name('product-single');
-Route::get('checkout', function () {
+Route::get('/checkout', function () {
     return view('checkout');
 })->name('checkout');
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+   
 
 
+
+Auth::routes();
+Route::get('/category/customer',[CategoryController::class,'index'])->name('customer');
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
