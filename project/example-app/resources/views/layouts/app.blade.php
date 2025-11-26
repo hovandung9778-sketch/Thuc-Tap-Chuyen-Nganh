@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Vegefoods - Free Bootstrap 4 Template by Colorlib</title>
+    <title>Admin Vegefoods</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <base href="{{ asset('public/') }}">
@@ -54,14 +54,14 @@
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="{{ route('home')}}">Vegefoods</a>
+	      <a class="navbar-brand" href="{{ route('homee')}}">Vegefoods</a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="{{ route('home')}}" class="nav-link">Home</a></li>
+	          <li class="nav-item active"><a href="{{ route('homee')}}" class="nav-link">Home</a></li>
 
 	          <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
@@ -71,7 +71,8 @@
                 <a class="dropdown-item" href="{{ route('product-single') }}">Single Product</a>
                 <a class="dropdown-item" href="{{ route('cart') }}">Cart</a>
                 <a class="dropdown-item" href="{{ route('checkout') }}">Check out</a>
-                <a class="dropdown-item" href="{{ route('customer') }}">Customer</a>
+                
+
 
               </div>
             </li>
@@ -79,78 +80,7 @@
 	          <li class="nav-item"><a href="{{ route('about') }}" class="nav-link">About</a></li>
 	          <li class="nav-item"><a href="{{ route('blog') }}" class="nav-link">Blog</a></li>
 	          <li class="nav-item"><a href="{{ route('contact') }}" class="nav-link">Contact</a></li>
-
-
-                       <!--
-              <ul class="navbar-nav ms-auto">
-                        @guest
-
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
-
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>-->
-                        
-                    @guest
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="authDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Login
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="authDropdown">
-                                @if (Route::has('login'))
-                                    <a class="dropdown-item" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                @endif
-                                @if (Route::has('register'))
-                                    <a class="dropdown-item" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                @endif
-                            </div>
-                        </li>
-                    @else
-                    
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="authDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }}
-                            </a>
-
-                            <div class="dropdown-menu" aria-labelledby="authDropdown">
-                                <a class="dropdown-item" href="{{ route('home') }}">Dashboard</a>
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                onclick="event.preventDefault(); document.getElementById('logout-form-vegefoods').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-
-                                <form id="logout-form-vegefoods" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </div>
-                        </li>
-                    @endguest
+            
 	          <li class="nav-item cta cta-colored"><a href="{{ route('cart') }}" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
 
 	        </ul>

@@ -1,0 +1,83 @@
+/* Đổi màu nền của body (phần còn lại của trang ngoài navbar/sidenav) */
+body.fixed-nav.sticky-footer.bg-dark {
+    background-color: #ffffff !important; /* Đặt màu trắng */
+}
+
+/* Đổi màu nền của Navbar trên cùng */
+#mainNav.bg-dark {
+    background-color: #ffffff !important; /* Đặt màu trắng */
+    /* Nếu muốn navbar có viền dưới */
+    border-bottom: 1px solid #ddd;
+}
+
+/* Đổi màu nền của Navbar bên trái (Sidenav) */
+#mainNav .navbar-sidenav {
+    background-color: #f8f9fc !important; /* Đặt màu trắng hoặc xám nhạt */
+    border-right: 1px solid #e9ecef; /* Thêm đường viền để phân biệt với content */
+}
+
+/* Đổi màu nền của nút điều khiển Sidenav */
+#mainNav .sidenav-toggler {
+    background-color: #f8f9fc !important; /* Trùng với sidenav */
+    border-right: 1px solid #e9ecef; /* Thêm đường viền */
+}
+
+/* Đổi màu chữ và icon trên sidenav để dễ nhìn hơn trên nền trắng */
+#mainNav .navbar-sidenav .nav-link-text,
+#mainNav .navbar-sidenav .fa-fw {
+    color: #333 !important; /* Đổi màu chữ sang đen */
+}
+
+/* Khi hover hoặc active trên sidenav */
+#mainNav .navbar-sidenav .nav-item .nav-link:hover,
+#mainNav .navbar-sidenav .nav-item .nav-link.active {
+    background-color: #e9ecef !important; /* Màu nền khi hover/active */
+    color: #007bff !important; /* Màu chữ khi hover/active */
+}
+
+/* Đổi màu các link dropdown của Products và Management */
+#mainNav .sidenav-second-level {
+    background-color: #f1f2f5 !important; /* Màu nền cho dropdown */
+}
+#mainNav .sidenav-second-level li a {
+    color: #333 !important; /* Màu chữ cho các link dropdown */
+}
+#mainNav .sidenav-second-level li a:hover {
+    background-color: #e9ecef !important;
+    color: #007bff !important;
+}
+
+/* Đổi màu chữ trong phần navbar trên cùng (nếu có user đăng nhập) */
+.navbar-nav.ml-auto .nav-link {
+    color: #333 !important;
+}
+.navbar-nav.ml-auto .nav-link:hover {
+    color: #007bff !important;
+}
+.navbar-brand {
+    color: #82ae46 !important; /* Màu xanh lá cây tương tự Vegefoods frontend */
+    text-transform: uppercase !important;
+    font-weight: bold !important;
+}
+
+
+/* Nếu content-wrapper có màu nền khác trắng, bạn có thể chỉnh ở đây */
+.content-wrapper {
+    background-color: #ffffff; /* Đảm bảo content-wrapper là màu trắng */
+}
+.btn-success {
+    background-color: #82ae46 !important;
+    border-color: #82ae46 !important;
+    color: #fff !important;
+}
+
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active {
+    background-color: #729a3e !important;
+    border-color: #729a3e !important;
+}
+.search-input-custom {
+    width: 200px; /* Hoặc bất kỳ chiều rộng mong muốn nào, ví dụ: 180px, 250px */
+    max-width: 100%; /* Đảm bảo nó không tràn ra ngoài trên màn hình nhỏ */
+}

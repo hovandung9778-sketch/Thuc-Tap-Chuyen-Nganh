@@ -1,11 +1,24 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\CategoryController;
+use App\Http\Controllers\admin\CustummerController;
+use App\Http\Controllers\admin\NhanVienController;
+use App\Http\Controllers\admin\ProductController;
+use App\Http\Controllers\admin\UserController;
+use App\Http\Controllers\Auth\RegisterController;
 
 
 Route::get('/', function () {
-    return view('index');
-})->name('home');
+    return view('home');
+})->name('homee');
+
+Route::get('/admin', function () {
+    return view('admin');
+})->name('admin');
+
+Route::get('/admin', function () {
+    return view('admin');
+})->name('admin');
 Route::get('/shop', function () {
     return view('shop');
 })->name('shop');
@@ -41,6 +54,23 @@ Route::get('/contact', function () {
 
 
 Auth::routes();
-Route::get('/category/customer',[CategoryController::class,'index'])->name('customer');
+//Route::get('/category/category',[CategoryController::class,'index'])->name('category');
+Route::get('/customer/Custummer',[CustummerController::class,'index'])->name('custummer');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/product/product',[ProductController::class,'index'])->name('product');
+
+Route::get('/user/user',[UserController::class,'index'])->name('user');
+
+
+////////////////////////////////////////////
+Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+Route::resource('category', App\Http\Controllers\admin\CategoryController::class);
+Route::resource('product', App\Http\Controllers\admin\ProductController::class);
+Route::resource('customer', App\Http\Controllers\admin\CustummerController::class);
+Route::resource('user', App\Http\Controllers\admin\UserController::class);
+
+
+});
+
+/////////////////////////////////////////
+Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->middleware('auth')->name('admin');
