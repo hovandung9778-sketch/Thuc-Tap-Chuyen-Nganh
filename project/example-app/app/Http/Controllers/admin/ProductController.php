@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\product;
 use Illuminate\Http\Request;
+use App\Models\Category;
 
 class ProductController extends Controller
 {
@@ -14,19 +15,25 @@ class ProductController extends Controller
         view()->share(['products'=>$products]);
     }
     public function index(){
-        $products = product::all();
+        $products = Product::with('category')->get();
         return view('product.product',compact('products'));
     }
 
-     public function create(){
-        return view('product.add');
+    public function create(){
+    $categories = Category::all(); 
+    return view('product.add', compact('categories'));
     }
+
     public function store(Request $request){
         $product = product::create(
             [
                 'name'=>$request->name,
+                'image'=>$request->image,
+                'decription'=>$request->decription,
+                'content'=>$request->content,
                 'gia'=>$request->gia,
-                
+                'idCategory'=>$request->idCategory,
+                'status'=>$request->status,
             ]
             );
             if($product)
@@ -39,13 +46,18 @@ class ProductController extends Controller
 
     public function edit($id){
         $product = product::find($id);
-        return view('product.edit',compact('product'));
+        $categories = Category::all();
+        return view('product.edit',compact('product','categories'));
     }
     public function update(Request $request,$id){
         $product =product::find($id);
         $product->update([
-            'name'=>$request->name,
+           'name'=>$request->name,
+            'image'=>$request->image,
+            'decription'=>$request->decription,
+            'content'=>$request->content,
             'gia'=>$request->gia,
+            'status'=>$request->status,
         ]);
         if($product)
             return redirect()->route('admin.product.index');

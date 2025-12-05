@@ -12,7 +12,7 @@
   </div>
   <div class="mb-3">
                 <label for="email" class="form-label">Email khách hàng</label>
-                <input type="text"  name="email" class="form-control" value="{{$customer->name}}">
+                <input type="text"  name="email" class="form-control" value="{{$customer->email}}">
             </div>
   
     

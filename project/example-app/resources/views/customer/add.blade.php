@@ -11,7 +11,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="name" class="form-label">Email khách hàng</label>
+                <label for="email" class="form-label">Email khách hàng</label>
                 <input type="text" name="email" class="form-control" required>
             </div>
 

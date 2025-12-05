@@ -24,6 +24,9 @@ class CategoryController extends Controller
         $category = Category::create(
             [
                 'name'=>$request->name,
+                'image'=>$request->image,
+                'status'=>$request->status,
+                
                 
             ]
             );
@@ -43,6 +46,8 @@ class CategoryController extends Controller
         $category =Category::find($id);
         $category->update([
             'name'=>$request->name,
+            'image'=>$request->image,
+            'status'=>$request->status,
         ]);
         if($category)
             return redirect()->route('admin.category.index');

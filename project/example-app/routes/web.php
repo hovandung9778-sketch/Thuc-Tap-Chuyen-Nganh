@@ -8,9 +8,12 @@ use App\Http\Controllers\admin\UserController;
 use App\Http\Controllers\Auth\RegisterController;
 
 
-Route::get('/', function () {
-    return view('home');
-})->name('homee');
+//Route::get('/', function () {
+ //  return view('home');
+//})->name('homee');
+
+Route::get('/', [App\Http\Controllers\HomeController::class,'home'])->name('homee');
+
 
 Route::get('/admin', function () {
     return view('admin');
@@ -50,16 +53,16 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
    
+//////////////////
+Route::get('/category/{id}', [ProductController::class, 'index'])->name('category.products');
 
-
+///////////////////
 
 Auth::routes();
 //Route::get('/category/category',[CategoryController::class,'index'])->name('category');
-Route::get('/customer/Custummer',[CustummerController::class,'index'])->name('custummer');
-
-Route::get('/product/product',[ProductController::class,'index'])->name('product');
-
-Route::get('/user/user',[UserController::class,'index'])->name('user');
+//Route::get('/customer/Custummer',[CustummerController::class,'index'])->name('custummer');
+//Route::get('/product/product',[ProductController::class,'index'])->name('product');
+//Route::get('/user/user',[UserController::class,'index'])->name('user');
 
 
 ////////////////////////////////////////////

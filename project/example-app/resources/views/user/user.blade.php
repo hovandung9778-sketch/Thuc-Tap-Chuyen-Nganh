@@ -12,7 +12,7 @@
       <td scope="col">Họ tên</td>
       <td scope="col">Email</td>
       <td scope="col">Password</td>
-     
+      <th scope="col">Delete</th>
     </tr>
   </thead>
   <tbody>
@@ -22,7 +22,14 @@
       <td>{{$object->name}}</td>
       <td>{{$object->email}}</td>
       <td>{{$object->password}}</td>
-      
+      <td><a href="{{route('admin.user.destroy',['user'=>$object->id])}}" title="Delete {{$object->name}}"
+       onclick="event.preventDefault();window.confirm('Bạn đã chắc chắn xóa '+ '{{$object->name}}' +' chưa?') ?document.getElementById('user-delete-{{ $object->id }}').submit() :0;" 
+       class="btn btn-danger"><i class="far fa-trash-alt"></i>
+                              <form action="{{ route('admin.user.destroy', ['user' => $object->id]) }}" method="post" id="user-delete-{{ $object->id }}">
+                                  {{ csrf_field() }}
+                                  {{ method_field('delete') }}
+                              </form>
+                          </a></td>
     </tr>
     @empty
     <h1>Chưa có dữ liệu</h1>
